@@ -1,14 +1,20 @@
-import * as React from 'react'
-import Tabs from '../components/Tabs'
-import { Switch } from '../components/Switch'
 import { useActive } from '../../hooks/useActive'
+import { useStore } from '../../hooks/useStore'
+import { Switch } from '../components/Switch'
+import Tabs from '../components/Tabs'
+import * as React from 'react'
 
 const Front: React.FunctionComponent = () => {
-  const { active, setActive } = useActive({ shouldSync: false })
+  const { active, setActive } = useActive({ shouldSync: true })
+  const { getCurrentTabId } = useStore()
 
   const onToggle = () => {
     setActive(!active)
   }
+
+  React.useEffect(() => {
+    getCurrentTabId()
+  }, [])
   return (
     <div className="flex flex-col h-screen">
       <div className="p-3 flex w-full justify-between h-10 bg-slate-600 flex-1">

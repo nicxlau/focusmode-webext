@@ -7,16 +7,13 @@ export const useActive = ({ shouldSync = false }) => {
 
   // Syncing with storage after data changed
   useEffect(() => {
-    if (shouldSync) {
-      browser.storage.local.set({ active })
-      if (currentTabId && browser && browser.tabs && browser.runtime?.id) {
-        browser.tabs.sendMessage(currentTabId, {
-          active,
-          id: 'onToggle',
-        })
-      }
+    if (currentTabId && browser && browser.tabs && browser.runtime?.id) {
+      browser.tabs.sendMessage(currentTabId, {
+        active,
+        id: 'onToggle',
+      })
     }
-  }, [active, shouldSync, currentTabId, browser])
+  }, [active])
 
   return {
     active,
