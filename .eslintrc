@@ -1,0 +1,12 @@
+{
+  "extends": ["get-off-my-lawn", "plugin:react/jsx-runtime"],
+  "rules": {
+    "arrow-body-style": "off",
+    "sort-keys": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "react/jsx-no-useless-fragment": {
+      "allowExpressions": true
+    }
+    // enable additional rules, override rule options, or disable rules
+  }
+}
