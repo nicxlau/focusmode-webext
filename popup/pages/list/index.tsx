@@ -1,18 +1,12 @@
 import Tabs from '../../components/Tabs'
 import { Form } from './components/Form'
 import * as React from 'react'
-import { goTo } from 'react-chrome-extension-router'
-import { useList } from '~/hooks/useList'
-import { Switch } from '~/popup/components/Switch'
+import { useStore } from '~/hooks/useStore'
 
 interface IListProps {}
 
 const List: React.FunctionComponent<IListProps> = () => {
-  const { list } = useList({ shouldSync: false })
-
-  const handleAddLink = () => {
-    goTo(Form)
-  }
+  const { list } = useStore()
 
   return (
     <div className="flex flex-col h-screen bg-[#222222]">
