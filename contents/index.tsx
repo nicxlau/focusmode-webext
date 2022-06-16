@@ -23,6 +23,16 @@ const Content = () => {
   console.log('isFocusModeOn', isFocusModeOn)
 
   useEffect(() => {
+    // from background
+    let contentScriptPort = browser.runtime.connect()
+
+    contentScriptPort.onMessage.addListener((message) => {
+      const { list, isActive } = message
+      setActive(isActive)
+      initList(list)
+    })
+
+    // from popup
     browser.runtime.onMessage.addListener(function (request) {
       const onToggleFromPopup = request?.id === 'onToggleFromPopup'
       const onChangeListFromPopup = request?.id === 'onChangeListFromPopup'

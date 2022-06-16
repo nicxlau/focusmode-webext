@@ -1227,6 +1227,11 @@
   dependencies:
     "@parcel/plugin" "2.6.0"
 
+"@plasmohq/storage@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@plasmohq/storage/-/storage-0.5.1.tgz#bef9df4075b66a9baf88cfac8946d521a735ddd3"
+  integrity sha512-n0suU3tdXBaWkGIvEEshJsxGpNxr/d8Byh94BgH96izuaRLFSrmLYJG4FJArwT7iYTMm9gUB8nT+MjjwawYCPg==
+
 "@rushstack/eslint-patch@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"

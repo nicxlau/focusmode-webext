@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.4",
+    "@plasmohq/storage": "^0.5.1",
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.2",
     "@use-it/interval": "^1.0.0",
