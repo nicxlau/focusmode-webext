@@ -2,18 +2,18 @@ import type { StoreSlice } from '.'
 import browser from 'webextension-polyfill'
 
 export interface IFocusState {
-  active: boolean
-  setActive: (active: boolean) => void
+  isActive: boolean
+  setActive: (isActive: boolean) => void
   currentTabId: number | undefined
   setCurrentTabId: (tabId: number) => void
   getCurrentTabId: () => void
 }
 
 export const createFocusSlice: StoreSlice<IFocusState> = (set) => ({
-  active: false,
+  isActive: false,
   currentTabId: undefined,
-  setActive: (active): void => {
-    set(() => ({ active }))
+  setActive: (isActive): void => {
+    set(() => ({ isActive }))
   },
   getCurrentTabId: async () => {
     const tabs = await browser.tabs.query({ active: true, currentWindow: true })
