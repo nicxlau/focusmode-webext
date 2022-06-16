@@ -8,22 +8,17 @@ export const config: PlasmoContentScript = {
   matches: ['http://*/*', 'https://*/*'],
 }
 
-// Idea for an UI API, for popup, notification badge, or mounting UI
-// Idea for static mount
-// Idea for styling injection support (inline or with custom emotion cache)
-
 export const getStyle = () => {
   const style = document.createElement('style')
   style.textContent = cssText
   return style
 }
 
-const PlasmoOverlay = () => {
+const Content = () => {
   const { setActive, active } = useStore()
 
   useEffect(() => {
     browser.runtime.onMessage.addListener(function (request) {
-      console.log('hehehe', request)
       if (request && request.id === 'onToggle') {
         setActive(request.active)
       }
@@ -44,4 +39,4 @@ const PlasmoOverlay = () => {
   )
 }
 
-export default PlasmoOverlay
+export default Content
