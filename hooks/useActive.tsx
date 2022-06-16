@@ -9,7 +9,7 @@ export const useActive = () => {
     if (currentTabId && browser && browser.tabs && browser.runtime?.id) {
       browser.tabs.sendMessage(currentTabId, {
         isActive,
-        id: 'onToggle',
+        id: 'onToggleFromPopup',
       })
     }
   }, [isActive])

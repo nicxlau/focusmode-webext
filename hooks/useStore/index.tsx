@@ -1,11 +1,11 @@
+import type { IFocusState } from './slices/focus'
+import { createFocusSlice } from './slices/focus'
+import type { IList } from './slices/list'
+import { createListSlice } from './slices/list'
 import type { SetState, GetState } from 'zustand'
 import create from 'zustand'
-import { immer } from 'zustand/middleware/immer'
 import { persist } from 'zustand/middleware'
-import type { IList } from './list'
-import { createListSlice } from './list'
-import type { IFocusState } from './focus'
-import { createFocusSlice } from './focus'
+import { immer } from 'zustand/middleware/immer'
 
 type StoreState = IFocusState & IList
 

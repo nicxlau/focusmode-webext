@@ -1,4 +1,4 @@
-import type { StoreSlice } from '.'
+import type { StoreSlice } from '..'
 import browser from 'webextension-polyfill'
 
 export interface IFocusState {

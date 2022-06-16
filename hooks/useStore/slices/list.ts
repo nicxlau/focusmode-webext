@@ -1,4 +1,4 @@
-import type { StoreSlice } from '.'
+import type { StoreSlice } from '..'
 import { nanoid } from 'nanoid'
 
 export interface LinkType {
@@ -9,6 +9,7 @@ export interface LinkType {
 
 export interface IList {
   list: LinkType[]
+  initList: (list: Array<LinkType>) => void
   addLink: (url: LinkType['url']) => void
   updateLink?: () => void
   removeLink?: (linkId: string) => void
@@ -18,6 +19,12 @@ export interface IList {
 
 export const createListSlice: StoreSlice<IList> = (set) => ({
   list: [],
+  initList: (list): void => {
+    set((state) => {
+      state.list = list
+      return state
+    })
+  },
   addLink: (url): void => {
     set((state) => {
       state.list.push({

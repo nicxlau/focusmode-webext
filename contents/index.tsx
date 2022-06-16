@@ -16,7 +16,7 @@ export const getStyle = () => {
 }
 
 const Content = () => {
-  const { setActive, isActive } = useStore()
+  const { setActive, initList, list } = useStore()
 
   const { isFocusModeOn } = useFocusMode()
 
@@ -24,23 +24,30 @@ const Content = () => {
 
   useEffect(() => {
     browser.runtime.onMessage.addListener(function (request) {
-      if (request && request.id === 'onToggle') {
+      const onToggleFromPopup = request?.id === 'onToggleFromPopup'
+      const onChangeListFromPopup = request?.id === 'onChangeListFromPopup'
+
+      if (onToggleFromPopup) {
         setActive(request.isActive)
+      } else if (onChangeListFromPopup) {
+        initList(request.list)
       }
     })
   }, [])
 
-  console.log('actisActiveive', isActive)
+  console.log('list', list)
 
   return (
-    <span
-      className="bg-indigo-500"
-      style={{
-        padding: 12,
-      }}
-    >
-      HELLO WORLDs TOP
-    </span>
+    isFocusModeOn && (
+      <span
+        className="bg-indigo-500"
+        style={{
+          padding: 12,
+        }}
+      >
+        Focus mode is ON
+      </span>
+    )
   )
 }
 

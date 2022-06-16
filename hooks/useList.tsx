@@ -9,7 +9,7 @@ export const useList = () => {
     if (currentTabId) {
       browser.tabs.sendMessage(currentTabId, {
         list,
-        id: 'onChangeList',
+        id: 'onChangeListFromPopup',
       })
     }
   }, [list, currentTabId])

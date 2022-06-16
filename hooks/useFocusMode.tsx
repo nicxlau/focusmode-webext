@@ -1,5 +1,4 @@
 import { useStore } from './useStore'
-import type { LinkType } from './useStore/list'
 import { useMemo } from 'react'
 import { baseURLRegex } from '~/constants/regex'
 
