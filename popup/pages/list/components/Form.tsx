@@ -7,7 +7,7 @@ export interface IFormProps {}
 export const Form: React.FunctionComponent<IFormProps> = (props) => {
   const [url, setURL] = React.useState<LinkType['url']>('')
 
-  const { addLink } = useList({ shouldSync: false })
+  const { addLink } = useList()
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
