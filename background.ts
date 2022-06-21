@@ -8,17 +8,23 @@ browser.runtime.onConnect.addListener(async (port) => {
 
   const tabs = await browser.tabs.query({ currentWindow: true, active: true })
 
-  const currentURL = tabs[0].url
+  const currentURL = tabs[0]?.url
 
-  const [baseURL] = currentURL!.match(baseURLRegex) ?? []
+  if (currentURL) {
+    const [baseURL] = currentURL.match(baseURLRegex) ?? []
 
-  if (baseURL) {
-    const {
-      state: { list, isActive },
-    } = await browser.storage.local.get('focusmode')
+    if (baseURL) {
+      const { focusmode } = await browser.storage.local.get()
 
-    contentScriptPort.postMessage({ list, isActive })
+      const localStorage = JSON.parse(JSON.parse(focusmode))
 
-    console.log({ list, isActive })
+      const {
+        state: { list, isActive },
+      } = localStorage
+
+      contentScriptPort.postMessage({ list, isActive })
+
+      console.log({ list, isActive })
+    }
   }
 })
