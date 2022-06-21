@@ -49,14 +49,25 @@ const Content = () => {
 
   return (
     isFocusModeOn && (
-      <span
-        className="bg-indigo-500"
-        style={{
-          padding: 12,
-        }}
+      <dialog
+        open
+        className="font-sans fixed z-50 top-0 left-0 right-0 bottom-0 h-screen w-screen bg-black/80 flex justify-center align-middle backdrop-saturate-50 backdrop-blur-sm"
       >
-        Focus mode is ON
-      </span>
+        <div className="absolute top-[200px] w-[460] m-h-[208px] rounded-md bg-[#111827]/100">
+          <div className="text-white p-4">Focus mode is on</div>
+          <div className="mt-3 mb-8 text-white px-4">
+            Distracting websites are now blocked
+          </div>
+          <div className="flex flex-col justify-center mt-4 text-white ">
+            <button className="p-2 w-full py-3 hover:bg-slate-800 transition-all">
+              OK
+            </button>
+            <button className="p-2 w-full py-3 hover:bg-slate-800 transition-all">
+              Take a 5 minutes break
+            </button>
+          </div>
+        </div>
+      </dialog>
     )
   )
 }
