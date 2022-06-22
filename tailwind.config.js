@@ -9,6 +9,6 @@ module.exports = {
       serif: ['Georgia', 'serif'],
     },
   },
-  variants: { extend: { typography: ['dark'] } },
+  variants: { fill: ['hover', 'focus'], extend: { typography: ['dark'] } },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }

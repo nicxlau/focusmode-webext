@@ -18,7 +18,7 @@ const Front: React.FunctionComponent = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="p-3 flex w-full justify-between h-10 bg-slate-600 flex-1">
+      <div className="p-3 flex w-full justify-between h-10 bg-[#1F2C47] flex-1">
         <p className="text-white text-base">Focus mode</p>
         <Switch onChange={onToggle} checked={isActive} />
       </div>
