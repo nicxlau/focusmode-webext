@@ -70,7 +70,7 @@ const Tabs: FunctionComponent = () => {
                   className="absolute top-0 left-2 right-2 h-[2px] bg-yellow-400"
                   layoutId="underline"
                 />
-              ) : null}
+              ) : undefined}
             </li>
           )
         })}

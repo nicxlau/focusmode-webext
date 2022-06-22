@@ -4,9 +4,11 @@
     "arrow-body-style": "off",
     "sort-keys": "off",
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
-    "react/jsx-no-useless-fragment": {
-      "allowExpressions": true
-    }
+    "react/jsx-no-useless-fragment": "off",
+    "import/order": "off",
+    "objects/no-object-properties-first-line": "off",
+    "objects/no-object-properties-one-line": "off",
+    "objects/no-object-properties-last-line": "off"
     // enable additional rules, override rule options, or disable rules
   }
 }

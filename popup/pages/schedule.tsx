@@ -1,13 +1,11 @@
-import * as React from 'react'
 import Tabs from '../components/Tabs'
+import type * as React from 'react'
 
-interface IScheduleProps {}
-
-const Schedule: React.FunctionComponent<IScheduleProps> = (props) => {
+const Schedule: React.FunctionComponent = () => {
   return (
     <div className="flex flex-col h-screen">
-      <div className="flex-1">schedule</div>
-      <Tabs></Tabs>
+      <div className="flex-1">{'schedule'}</div>
+      <Tabs />
     </div>
   )
 }

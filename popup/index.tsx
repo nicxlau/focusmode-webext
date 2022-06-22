@@ -1,9 +1,9 @@
 import '../styles.css'
 import Front from './pages/front'
-import { useState } from 'react'
+import type { FunctionComponent } from 'react'
 import { Router } from 'react-chrome-extension-router'
 
-function IndexPopup() {
+const IndexPopup: FunctionComponent = () => {
   return (
     <div className="bg-white h-[540px] w-[360px]">
       <Router>

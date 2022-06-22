@@ -4,7 +4,12 @@ import { useHover } from '~hooks/useHover'
 
 const iconSize = 24
 
-export const IconButton = ({
+interface IIconButtonProps {
+  id: string
+  selectedTabId: string
+}
+
+export const IconButton: React.FunctionComponent<IIconButtonProps> = ({
   id,
   selectedTabId,
 }: {
@@ -18,44 +23,46 @@ export const IconButton = ({
       case 'front':
         return (
           <House
+            color="white"
             size={iconSize}
             weight={selectedTabId === 'front' || isHovered ? 'fill' : 'regular'}
-            color={'white'}
           />
         )
       case 'list':
         return (
           <Rows
+            color="white"
             size={iconSize}
             weight={selectedTabId === 'list' || isHovered ? 'fill' : 'regular'}
-            color={'white'}
           />
         )
       case 'schedule':
         return (
           <Clock
+            color="white"
             size={iconSize}
             weight={
               selectedTabId === 'schedule' || isHovered ? 'fill' : 'regular'
             }
-            color={'white'}
           />
         )
 
       case 'settings':
         return (
           <GearSix
+            color="white"
             size={iconSize}
             weight={
               selectedTabId === 'settings' || isHovered ? 'fill' : 'regular'
             }
-            color={'white'}
           />
         )
 
       default:
         break
     }
+
+    return <></>
   }, [id, selectedTabId, isHovered])
 
   return (
