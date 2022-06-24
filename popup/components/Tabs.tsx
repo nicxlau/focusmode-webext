@@ -19,17 +19,12 @@ const Tabs: FunctionComponent = () => {
   const handleNav = React.useCallback(
     (tab: Tab) => () => {
       goTo(tab.component, { id: tab.id })
+      setSelectedTabId(tab.id)
     },
     []
   )
 
   const currentTab = getCurrent()
-
-  React.useEffect(() => {
-    if (currentTab.props?.id) {
-      setSelectedTabId(currentTab.props?.id)
-    }
-  }, [currentTab.props])
 
   const tabs = [
     {
@@ -50,14 +45,10 @@ const Tabs: FunctionComponent = () => {
     },
   ]
 
-  console.log('yo', currentTab)
-
   return (
     <nav>
       <ul className="flex w-full bg-[#111827] justify-between text-lg  align-middle px-4">
         {tabs.map((tab) => {
-          console.log('selectedTab', { selectedTabId, tabId: tab.id })
-
           return (
             <li
               className="relative cursor-pointer"
@@ -70,7 +61,7 @@ const Tabs: FunctionComponent = () => {
                   className="absolute top-0 left-2 right-2 h-[2px] bg-yellow-400"
                   layoutId="underline"
                 />
-              ) : undefined}
+              ) : null}
             </li>
           )
         })}

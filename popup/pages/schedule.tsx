@@ -1,13 +1,7 @@
-import Tabs from '../components/Tabs'
 import type * as React from 'react'
 
 const Schedule: React.FunctionComponent = () => {
-  return (
-    <div className="flex flex-col h-screen">
-      <div className="flex-1">{'schedule'}</div>
-      <Tabs />
-    </div>
-  )
+  return <div>{'schedule'}</div>
 }
 
 export default Schedule

@@ -18,6 +18,7 @@ export const IconButton: React.FunctionComponent<IIconButtonProps> = ({
 }) => {
   const [hoverRef, isHovered] = useHover<HTMLDivElement>()
 
+  console.log('selectedTab', selectedTabId)
   const getIcon = React.useMemo(() => {
     switch (id) {
       case 'front':
@@ -25,7 +26,7 @@ export const IconButton: React.FunctionComponent<IIconButtonProps> = ({
           <House
             color="white"
             size={iconSize}
-            weight={selectedTabId === 'front' || isHovered ? 'fill' : 'regular'}
+            weight={selectedTabId === 'front' ? 'fill' : 'regular'}
           />
         )
       case 'list':
@@ -33,7 +34,7 @@ export const IconButton: React.FunctionComponent<IIconButtonProps> = ({
           <Rows
             color="white"
             size={iconSize}
-            weight={selectedTabId === 'list' || isHovered ? 'fill' : 'regular'}
+            weight={selectedTabId === 'list' ? 'fill' : 'regular'}
           />
         )
       case 'schedule':
@@ -41,9 +42,7 @@ export const IconButton: React.FunctionComponent<IIconButtonProps> = ({
           <Clock
             color="white"
             size={iconSize}
-            weight={
-              selectedTabId === 'schedule' || isHovered ? 'fill' : 'regular'
-            }
+            weight={selectedTabId === 'schedule' ? 'fill' : 'regular'}
           />
         )
 
@@ -52,9 +51,7 @@ export const IconButton: React.FunctionComponent<IIconButtonProps> = ({
           <GearSix
             color="white"
             size={iconSize}
-            weight={
-              selectedTabId === 'settings' || isHovered ? 'fill' : 'regular'
-            }
+            weight={selectedTabId === 'settings' ? 'fill' : 'regular'}
           />
         )
 

@@ -8,7 +8,8 @@
     "import/order": "off",
     "objects/no-object-properties-first-line": "off",
     "objects/no-object-properties-one-line": "off",
-    "objects/no-object-properties-last-line": "off"
+    "objects/no-object-properties-last-line": "off",
+    "unicorn/no-null": "off"
     // enable additional rules, override rule options, or disable rules
   }
 }

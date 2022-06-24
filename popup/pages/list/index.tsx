@@ -1,4 +1,3 @@
-import Tabs from '../../components/Tabs'
 import { Form } from './components/Form'
 import type * as React from 'react'
 import { useStore } from '~/hooks/useStore'
@@ -7,14 +6,14 @@ const List: React.FunctionComponent = () => {
   const { list } = useStore()
 
   return (
-    <div className="flex flex-col h-screen bg-[#222222]">
-      <div className="p-6 w-full basis-12">
+    <div className="bg-[#222222] flex flex-col">
+      <div className="p-6 w-full">
         <p className="text-base font-lg pb-4 text-white">
           {'Blocked websites'}
         </p>
         <Form />
       </div>
-      <ul className="overflow-y-auto flex-1">
+      <ul className="overflow-y-auto flex-auto">
         {list.map(({ url }) => {
           return (
             <li
@@ -26,7 +25,6 @@ const List: React.FunctionComponent = () => {
           )
         })}
       </ul>
-      <Tabs />
     </div>
   )
 }
