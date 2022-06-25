@@ -2,6 +2,12 @@ import { useActive } from '../../hooks/useActive'
 import { useStore } from '../../hooks/useStore'
 import { Switch, type  ISwitchProp} from '../components/Switch'
 import * as React from 'react'
+import {
+
+  Coffee as CoffeeIcon,
+  Circle as CircleIcon,
+  Hexagon as HexagonIcon,
+} from 'phosphor-react';
 
 const Front: React.FunctionComponent = () => {
   const { isActive, setActive } = useActive()
@@ -18,14 +24,17 @@ const Front: React.FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="flex flex-col">
-      <div className="p-3 flex w-full justify-between h-10 bg-[#1F2C47]">
-        <p className="text-white text-base">{'Focus mode'}</p>
+    <div className="h-full"> 
+      <div className="p-5 flex w-full justify-between items-center">
+        <div className='flex items-center'>
+          <div className='h-[42px] w-[42px] rounded-full flex justify-center items-center bg-[#2d3748] mr-4'>
+            <HexagonIcon color="white"size={24} strokeWidth={1}/>
+          </div>
+          <p className="text-white font-semibold tracking-wide text-lg">{'Focus mode'}</p>
+        </div>
         <Switch checked={isActive} onChange={onToggle} />
       </div>
-      <div className='flex-auto flex-col overflow-y-auto' />
-    </div>
-  )
+    </div>)
 }
 
 export default Front

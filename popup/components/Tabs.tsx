@@ -6,7 +6,7 @@ import { IconButton } from './IconButton'
 import { motion } from 'framer-motion'
 import * as React from 'react'
 import type { FunctionComponent } from 'react'
-import { getCurrent, goTo } from 'react-chrome-extension-router'
+import { goTo } from 'react-chrome-extension-router'
 
 interface Tab {
   id: string
@@ -23,8 +23,6 @@ const Tabs: FunctionComponent = () => {
     },
     []
   )
-
-  const currentTab = getCurrent()
 
   const tabs = [
     {
@@ -47,7 +45,7 @@ const Tabs: FunctionComponent = () => {
 
   return (
     <nav>
-      <ul className="flex w-full bg-[#111827] justify-between text-lg  align-middle px-4">
+      <ul className="flex w-full bg-[hsl(221,39%,14%)] justify-between text-lg  align-middle px-4">
         {tabs.map((tab) => {
           return (
             <li
@@ -58,7 +56,7 @@ const Tabs: FunctionComponent = () => {
               <IconButton id={tab.id} selectedTabId={selectedTabId} />
               {tab.id === selectedTabId ? (
                 <motion.div
-                  className="absolute top-0 left-2 right-2 h-[2px] bg-yellow-400"
+                  className="absolute top-0 left-2 right-2 h-[3px] bg-[#4364ea] rounded"
                   layoutId="underline"
                 />
               ) : null}
