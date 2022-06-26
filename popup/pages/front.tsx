@@ -30,7 +30,7 @@ const Front: React.FunctionComponent = () => {
           <div className='h-[42px] w-[42px] rounded-full flex justify-center items-center bg-[#2d3748] mr-4'>
             <HexagonIcon color="white"size={24} strokeWidth={1}/>
           </div>
-          <p className="text-white font-semibold tracking-wide text-lg">{'Focus mode'}</p>
+          <p className="text-white font-semibold tracking-wide text-lg">{'Focus Mode'}</p>
         </div>
         <Switch checked={isActive} onChange={onToggle} />
       </div>

@@ -1,6 +1,6 @@
 import '../styles.css'
 import Tabs from './components/Tabs'
-import Front from './pages/front'
+import Front from './pages/list'
 import type { FunctionComponent } from 'react'
 import { Router } from 'react-chrome-extension-router'
 

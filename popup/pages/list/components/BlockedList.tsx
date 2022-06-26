@@ -1,5 +1,3 @@
-import { Form } from './components/Form'
-import ListTabs from './components/ListTabs'
 import type * as React from 'react'
 import { useStore } from '~/hooks/useStore'
 
@@ -8,15 +6,7 @@ const List: React.FunctionComponent = () => {
 
   return (
     <div className="flex flex-col">
-      <div className=" w-full">
-        <p className="p-6 text-xl font-semibold pb-4 text-white tracking-wide mb-1">
-          {'Site List'}
-        </p>
-        <ListTabs />
-        <Form />
-      </div>
-
-      {/* <ul className="overflow-y-auto flex-auto">
+      <ul className="overflow-y-auto flex-auto">
         {list.map(({ url }) => {
           return (
             <li
@@ -27,7 +17,7 @@ const List: React.FunctionComponent = () => {
             </li>
           )
         })}
-      </ul> */}
+      </ul>
     </div>
   )
 }

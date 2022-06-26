@@ -56,7 +56,7 @@ const Tabs: FunctionComponent = () => {
               <IconButton id={tab.id} selectedTabId={selectedTabId} />
               {tab.id === selectedTabId ? (
                 <motion.div
-                  className="absolute top-0 left-2 right-2 h-[3px] bg-[#4364ea] rounded"
+                  className="absolute top-0 left-2 right-2 h-[2px] bg-[#4364ea] rounded"
                   layoutId="underline"
                 />
               ) : null}
