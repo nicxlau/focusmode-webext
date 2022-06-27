@@ -16,7 +16,7 @@ const List: React.FunctionComponent = () => {
         <Form />
       </div>
 
-      {/* <ul className="overflow-y-auto flex-auto">
+      <ul className="overflow-y-auto flex-auto">
         {list.map(({ url }) => {
           return (
             <li
@@ -27,7 +27,7 @@ const List: React.FunctionComponent = () => {
             </li>
           )
         })}
-      </ul> */}
+      </ul>
     </div>
   )
 }
