@@ -12,7 +12,9 @@
     "unicorn/no-null": "off",
     "import/exports-last": "off",
     "unicorn/filename-case": "off",
-    "eslint-comments/no-unused-disable": "off"
+    "eslint-comments/no-unused-disable": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off"
     // enable additional rules, override rule options, or disable rules
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import browser from 'webextension-polyfill'
 import { baseURLRegex } from '~constants/regex'
 
@@ -22,9 +23,8 @@ browser.runtime.onConnect.addListener(async (port) => {
         state: { list, isActive },
       } = localStorage
 
+      // eslint-disable-next-line unicorn/require-post-message-target-origin
       contentScriptPort.postMessage({ list, isActive })
-
-      console.log({ list, isActive })
     }
   }
 })
@@ -48,8 +48,6 @@ browser.tabs.onActivated.addListener(async (activeInfo) => {
       const {
         state: { list, isActive },
       } = localStorage
-
-      console.log({ list, isActive })
 
       await browser.tabs.sendMessage(activeInfo.tabId, {
         isActive,
