@@ -16,6 +16,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.2",
     "@use-it/interval": "^1.0.0",
+    "dayjs": "^1.11.3",
     "framer-motion": "^6.3.12",
     "immer": "^9.0.15",
     "nanoid": "^4.0.0",

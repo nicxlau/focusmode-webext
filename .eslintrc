@@ -9,7 +9,10 @@
     "objects/no-object-properties-first-line": "off",
     "objects/no-object-properties-one-line": "off",
     "objects/no-object-properties-last-line": "off",
-    "unicorn/no-null": "off"
+    "unicorn/no-null": "off",
+    "import/exports-last": "off",
+    "unicorn/filename-case": "off",
+    "eslint-comments/no-unused-disable": "off"
     // enable additional rules, override rule options, or disable rules
   }
 }

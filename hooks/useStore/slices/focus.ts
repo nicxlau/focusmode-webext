@@ -15,12 +15,12 @@ export const createFocusSlice: StoreSlice<IFocusState> = (set) => ({
   setActive: (isActive): void => {
     set(() => ({ isActive }))
   },
-  getCurrentTabId: async () => {
+  getCurrentTabId: async (): Promise<void> => {
     const tabs = await browser.tabs.query({ active: true, currentWindow: true })
 
     set({ currentTabId: tabs[0].id })
   },
-  setCurrentTabId: (tabId) => {
+  setCurrentTabId: (tabId): void => {
     set({ currentTabId: tabId })
   },
 })

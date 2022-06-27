@@ -2,7 +2,10 @@ import { useStore } from './useStore'
 import { useMemo } from 'react'
 import { baseURLRegex } from '~/constants/regex'
 
-export const useFocusMode = () => {
+export const useFocusMode = (): {
+  isFocusModeOn: boolean
+  match: RegExpMatchArray | null
+} => {
   const { list, isActive } = useStore()
 
   const match = window.location.href.match(baseURLRegex)
@@ -10,24 +13,21 @@ export const useFocusMode = () => {
   const isFocusModeOn = useMemo(() => {
     if (match) {
       const baseURL = match[0]
-      try {
-        const pausedURL = list.map(({ url }) => {
-          const matchedURL = url.match(baseURLRegex)
-          console.log({ matchedURL })
 
-          if (matchedURL) {
-            return matchedURL[0]
-          }
-        })
-        const isPause = pausedURL.includes(baseURL)
+      const pausedURL = list.map(({ url }) => {
+        const matchedURL = url.match(baseURLRegex)
 
-        console.log({ list, pausedURL, isPause, isActive })
+        if (matchedURL) {
+          return matchedURL[0]
+        }
 
-        return isPause && isActive
-      } catch (err) {
-        console.log('error', err)
-      }
+        return ''
+      })
+      const isPause = pausedURL.includes(baseURL)
+
+      return isPause && isActive
     }
+
     return false
   }, [isActive, list, match])
 
