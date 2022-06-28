@@ -1,11 +1,16 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import browser from 'webextension-polyfill'
 import { baseURLRegex } from '~constants/regex'
 
-let contentScriptPort
+const contentScriptPort: browser.Runtime.Port[] = []
+
+console.log('port', contentScriptPort)
 
 browser.runtime.onConnect.addListener(async (port) => {
-  contentScriptPort = port
+  console.log('port number', port)
+
+  if (!contentScriptPort.includes(port)) {
+    contentScriptPort.push(port)
+  }
 
   const tabs = await browser.tabs.query({ currentWindow: true, active: true })
 
@@ -23,8 +28,9 @@ browser.runtime.onConnect.addListener(async (port) => {
         state: { list, isActive },
       } = localStorage
 
-      // eslint-disable-next-line unicorn/require-post-message-target-origin
-      contentScriptPort.postMessage({ list, isActive })
+      contentScriptPort.forEach((item) => {
+        item.postMessage({ list, isActive })
+      })
     }
   }
 })
